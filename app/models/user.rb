@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+	before_save { self.email = email.downcase }
+
 	has_many :order_links
 	has_many :orders, through: :order_links
 
