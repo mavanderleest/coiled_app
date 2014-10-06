@@ -5,5 +5,5 @@
 jQuery ->
 	$('#orders').dataTable(
 		stateSave: true
+		bJQueryUI: true
 	)
-	$(".best_in_place").best_in_place()

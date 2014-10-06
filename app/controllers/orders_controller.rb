@@ -3,9 +3,7 @@ class OrdersController < ApplicationController
 	before_action :correct_user, only: :destroy
 
   def index
-  	@user = current_user
-  	@order = current_user.orders.build
-		@orders = current_user.orders.all
+  	available_orders
   end
 
   def create

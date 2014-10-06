@@ -1,11 +1,7 @@
 class StaticPagesController < ApplicationController
 
 	def home
-		if signed_in?
-			@user = current_user
-  		@order = current_user.orders.build
-			@orders = current_user.orders.all
-		end
+		available_orders
 	end
 
 	def help
