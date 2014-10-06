@@ -1,0 +1,23 @@
+<aside class="small-4 columns">
+  <section>
+    <h1>
+      <%# Replace with company-logo or profile image %>
+      <%= @user.name %>
+    </h1>
+    <h2>Company</h2>
+    <h2>Title</h2>
+  </section>
+  <section>
+    <%= render 'shared/order_form' %>
+  </section>
+  <section>
+    <h2>
+      Basic info
+    </h2>
+    <ul>
+    	<li>Email: <%= current_user.email %></li>
+    	<li>Email: <%= current_user.email %></li>
+    	<li>Email: <%= current_user.email %></li>
+    </ul>
+  </section>
+</aside>
