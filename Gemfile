@@ -7,9 +7,10 @@ gem 'foundation-rails'
 gem 'sprockets', '2.11.0'
 gem 'bcrypt', '~> 3.1.2'
 gem 'faker', '1.1.2'
-gem 'will_paginate', '~> 3.0.5'
+gem 'will_paginate'
 # gem 'bootstrap-will_paginate', '0.0.9'
 gem 'tzinfo-data'
+gem 'best_in_place', github: 'aaronchi/best_in_place'
 
 group :development, :test do
   gem 'sqlite3', '1.3.8'
@@ -39,8 +40,10 @@ group :test do
 end
 
 gem 'sass-rails', '~> 4.0.0'
-gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
+gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
+# gem 'jquery-ui-rails'
+gem 'uglifier', '>= 1.3.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'

@@ -7,8 +7,8 @@
     <title><%= full_title(yield(:title)) %></title>
 
     <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
+    <%= javascript_include_tag "application" %>
     <%= csrf_meta_tags %>
     <%= render 'layouts/shim' %>
   </head>
@@ -19,5 +19,8 @@
     <%= yield %>
     <%= render 'layouts/footer' %>
     <%= debug(params) if Rails.env.development? %>
+    <script>
+      $(document).foundation();
+    </script>
   </body>
 </html>

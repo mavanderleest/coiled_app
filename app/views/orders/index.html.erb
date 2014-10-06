@@ -1,12 +1,10 @@
 <% provide(:title, 'My orders') %>
 <div class="row">
 	<%= render 'shared/sidebar' %>
-  <div class="small-8 columns">
+  <div class="small-9 columns">
 		<% if current_user.orders.any? %>
 		<h3>Orders (<%= @user.orders.all.count %>)</h3>
-	  <ul class="orders">
-	  	<%= render @orders %>
-	  </ul>
+	  	<%= render 'shared/order_list' %>
 	  <% end %>
   </div>
 </div>

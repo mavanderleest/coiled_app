@@ -1,8 +1,13 @@
 <%= form_for(@order) do |f| %>
   <%= render 'shared/error_messages', object: @order %>
-  <div>
-    <%= f.select 		:grade, options_for_select(["110","100","90","80","70"]) %>
-    <%= f.text_area :notes, placeholder: "Notes for order..." %>
+  <div class="row">
+  	<div class="small-3 columns">
+  		<%= f.label :grade, class: "right inline" %>
+  	</div>
+  	<div class="small-9 columns">
+  		<%= f.select 		:grade, options_for_select(["110","100","90","80","70"]) %>
+  	</div>
   </div>
-  <%= f.submit "Post", class: "button small radius" %>
+    <%= f.text_area :notes, placeholder: "Notes for order..." %>
+  <%= f.submit "Create order", class: "button small radius" %>
 <% end %>

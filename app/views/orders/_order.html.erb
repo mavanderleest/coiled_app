@@ -1,13 +1,7 @@
-<li>
-  <span class="order-details"><%= order.grade %></span>
-  <span class="order-notes"><%= order.notes %></span>
-  <span class="timestamp"><small>
-    Created <%= time_ago_in_words(order.created_at) %> ago.
-  </small></span>
-  <% if current_user.linked?(order) %>
-    <small>
-    	<%= link_to "delete", order, 	method: :delete,
-                                  	data: { confirm: "Are you sure?" } %>
-    </small>
-  <% end %>
-</li>
+<tr>
+  <td><%= order.id %></td>
+  <td><%= order.grade %></td>
+  <td><%= order.notes %></td>
+  <td><%= order.updated_at.strftime("%B %e, %Y") %></td>
+  <td><%= order.created_at.strftime("%B %e, %Y") %></td>
+</tr>
