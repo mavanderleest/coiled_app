@@ -10,16 +10,26 @@
       <!-- Right Nav Section -->
       <ul class="right">
         <li><%= link_to "Home", root_path %></li>
-        <li class="has-dropdown">
-          <a href="#">Account</a>
-          <ul class="dropdown">
-            <li><%= link_to "Profile", '#' %></li>
-            <li><%= link_to "Settings", '#' %></li>
-            <li class="divider"></li>
-            <li><%= link_to "Sign Out", '#' %></li>
-          </ul>
-          <li><%= link_to "Sign in", '#' %></li>
-        </li>
+        <% if signed_in? %>
+          <li class="has-dropdown">
+            <a href="#">Orders</a>
+            <ul class="dropdown">
+              <li><%= link_to "Summary", orders_path %></li>
+              <li><%= link_to "Manage", '#' %></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="#">Account</a>
+            <ul class="dropdown">
+              <li><%= link_to "Profile", current_user %></li>
+              <li><%= link_to "Settings", '#' %></li>
+              <li class="divider"></li>
+              <li><%= link_to "Sign Out", signout_path, method: "delete" %></li>
+            </ul>
+          </li>
+        <% else %>
+            <li><%= link_to "Sign in", signin_path %></li>
+        <% end %>
       </ul>
 
       <!-- Left Nav Section -->

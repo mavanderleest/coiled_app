@@ -1,11 +1,9 @@
 <% provide(:title, @user.name) %>
 <div class="row">
-  <aside class="small-4 collumns">
-    <section>
-      <h1>
-        <%# Replace with company-logo %>
-        <%= @user.name %>
-      </h1>
-    </section>
-  </aside>
+	<%= render 'shared/sidebar' %>
+  <div class="small-8 columns">
+		<section>
+			<h1>About</h1>
+		</section>
+  </div>
 </div>

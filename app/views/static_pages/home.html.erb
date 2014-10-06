@@ -1,12 +1,22 @@
 <div class="row">
-	<div class="small-10 small-centered text-center columns">
-	  <h1>Welcome</h1>
-
-	  <h2>
-	    This is your coiled tubing management application.
-	  </h2>
-		<div class="small-6 small-centered columns">
-	  	<%= link_to "Get started!", signup_path, class: "button expand radius" %>		
-	  </div>
+	<% if signed_in? %>
+	<%= render 'shared/sidebar' %>
+	<div class="small-8 columns">
+		<section>
+			<h1>Recent updates</h1>
+			<%= render @orders %>
+		</section>
 	</div>
+	<% else %>
+		<div class="small-10 small-centered text-center columns">
+		  <h1>Welcome</h1>
+
+		  <h2>
+		    This is your coiled tubing management application.
+		  </h2>
+			<div class="small-6 small-centered columns">
+		  	<%= link_to "Get started!", signup_path, class: "button expand radius" %>		
+		  </div>
+		</div>
+	<% end %>
 </div>
