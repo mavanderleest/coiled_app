@@ -12,3 +12,19 @@
     <%= render @orders %>
   </tbody>
 </table>
+<div class="row">
+  <div class="small-5 columns">
+    <h6>Import:</h6>
+      <%= form_tag import_orders_path, multipart: true do %>
+        <%= file_field_tag :file %>
+        <%= submit_tag "Import" %>
+      <% end %>
+  </div>
+  <div class="small-5 text-center columns">
+    <small>
+      Download:
+      <%= link_to "CSV", orders_path(format: "csv") %> |
+      <%= link_to "Excel", orders_path(format: "xls") %>
+    </small>
+  </div>
+</div>

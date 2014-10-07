@@ -4,6 +4,11 @@ class OrdersController < ApplicationController
 
   def index
   	available_orders
+  	respond_to do |format|
+			format.html
+			format.csv { send_data @orders.to_csv }
+			format.xls { send_data @orders.to_csv(col_sep: "\t") }
+		end
   end
 
   def create
@@ -21,7 +26,7 @@ class OrdersController < ApplicationController
   def update
 		if @order.update_attributes(order_params)
 			flash[:success] = "Order updated"
-			redirect_to current_user
+			redirect_to orders_path
 		else
 			render 'edit'
 		end
@@ -31,6 +36,12 @@ class OrdersController < ApplicationController
 		@order.destroy
 		OrderLink.destroy_all(order_id: @order.id)
 		flash[:success] = "Order deleted"
+		redirect_to orders_path
+	end
+
+	def import
+		Order.import(params[:file],current_user)
+		flash[:success] = "Orders imported."
 		redirect_to orders_path
 	end
 

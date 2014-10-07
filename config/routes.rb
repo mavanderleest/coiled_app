@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :users
-  resources :orders
+  resources :orders do
+    collection { post :import }
+  end
 	resources :sessions,	only: [:new, :create, :destroy]
 
   root 'static_pages#home'
