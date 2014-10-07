@@ -7,10 +7,6 @@ class Order < ActiveRecord::Base
 	validates :grade,	presence: true, length: { maximum: 10 }
 	validates :id,		uniqueness: true
 
-	def self.recent_orders(date)
-
-	end
-
 	def self.to_csv(options = {})
 		CSV.generate(options) do |csv|
 			csv << column_names
