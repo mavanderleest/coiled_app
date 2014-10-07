@@ -41,7 +41,7 @@ class OrdersController < ApplicationController
 
 	def import
 		Order.import(params[:file],current_user)
-		flash[:success] = "Orders imported."
+		flash[:warning] = "Orders imported."
 		redirect_to orders_path
 	end
 

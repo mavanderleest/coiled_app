@@ -13,18 +13,22 @@
   </tbody>
 </table>
 <div class="row">
-  <div class="small-5 columns">
-    <h6>Import:</h6>
-      <%= form_tag import_orders_path, multipart: true do %>
-        <%= file_field_tag :file %>
-        <%= submit_tag "Import" %>
-      <% end %>
-  </div>
-  <div class="small-5 text-center columns">
-    <small>
+  <div class="small-12 text-center columns">
+    <h6>
+      Import:
+      <a href="#" data-reveal-id="importModal">CSV/Excel</a>
+    </h6>
+    <h6>
       Download:
       <%= link_to "CSV", orders_path(format: "csv") %> |
       <%= link_to "Excel", orders_path(format: "xls") %>
-    </small>
+    </h6>
   </div>
+</div>
+<div id="importModal" class="reveal-modal" data-reveal>
+  <%= form_tag import_orders_path, multipart: true do %>
+    <%= file_field_tag :file %>
+    <%= submit_tag "Import" %>
+  <% end %>
+  <a class="close-reveal-modal">&#215;</a>
 </div>

@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
 
 	def home
-		available_orders
+		recent_orders
 	end
 
 	def help

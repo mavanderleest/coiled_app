@@ -4,22 +4,22 @@
   xmlns:x="urn:schemas-microsoft-com:office:excel"
   xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
   xmlns:html="http://www.w3.org/TR/REC-html40">
-  <Worksheet ss:Name="Sheet1">
+  <Worksheet ss:Name="Orders">
     <Table>
       <Row>
         <Cell><Data ss:Type="String">ID</Data></Cell>
         <Cell><Data ss:Type="String">Grade</Data></Cell>
         <Cell><Data ss:Type="String">Notes</Data></Cell>
-        <Cell><Data ss:Type="DateTime">Revised Date</Data></Cell>
-        <Cell><Data ss:Type="DateTime">Creation Date</Data></Cell>
+        <Cell><Data ss:Type="String">Revised Date</Data></Cell>
+        <Cell><Data ss:Type="String">Creation Date</Data></Cell>
       </Row>
     <% @orders.each do |order| %>
       <Row>
         <Cell><Data ss:Type="Number"><%= order.id %></Data></Cell>
-        <Cell><Data ss:Type="Number"><%= order.grade %></Data></Cell>
-        <Cell><Data ss:Type="Number"><%= order.notes %></Data></Cell>
-        <Cell><Data ss:Type="Number"><%= order.updated_at %></Data></Cell>
-        <Cell><Data ss:Type="Number"><%= order.created_at %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= order.grade %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= order.notes %></Data></Cell>
+        <Cell><Data ss:Type="DateTime"><%= order.updated_at %></Data></Cell>
+        <Cell><Data ss:Type="DateTime"><%= order.created_at %></Data></Cell>
       </Row>
     <% end %>
     </Table>
