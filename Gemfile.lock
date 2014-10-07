@@ -7,6 +7,13 @@ GIT
       rails (>= 3.1)
 
 GIT
+  remote: git://github.com/antillas21/ajax-datatables-rails.git
+  revision: b8c50d7e2bdcc2488655f4a6ec9d448cde2988fc
+  specs:
+    ajax-datatables-rails (0.2.1)
+      railties (>= 3.1)
+
+GIT
   remote: git://github.com/rweng/jquery-datatables-rails.git
   revision: 37349993fb40fae4fa079729a25dc99d5ef3c416
   specs:
@@ -184,6 +191,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  ajax-datatables-rails!
   bcrypt (~> 3.1.2)
   best_in_place!
   capybara (= 2.1.0)

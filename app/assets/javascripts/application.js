@@ -15,5 +15,4 @@
 //= require dataTables/jquery.dataTables
 //= require dataTables/jquery.dataTables.foundation
 //= require foundation
-//= require best_in_place
 //= require_tree .

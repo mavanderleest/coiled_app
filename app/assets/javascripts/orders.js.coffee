@@ -3,7 +3,5 @@
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
 jQuery ->
-	$('#orders').dataTable(
+	$('#orders').dataTable
 		stateSave: true
-		bJQueryUI: true
-	)
